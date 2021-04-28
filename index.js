@@ -5,7 +5,13 @@ const cors = require('cors');
 require('dotenv/config');
 
 const app = expreess();
-app.use(cors());
+app.use(
+  cors({
+    orgin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type',
+  })
+);
 app.use(bodyParser.json());
 
 const usersRoute = require('./routes/users');
