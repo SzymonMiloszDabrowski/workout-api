@@ -9,8 +9,14 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const usersRoute = require('./routes/users');
+const loginRoute = require('./routes/login');
+const exercisesRoute = require('./routes/exercises');
+const treningsRoute = require('./routes/trenings');
 
 app.use('/users', usersRoute);
+app.use('/login', loginRoute);
+app.use('/exercises', exercisesRoute);
+app.use('/trenings', treningsRoute);
 
 app.get('/', (req, res) => {
   res.send('Workout API');
